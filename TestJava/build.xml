@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="OnlinePayments">
+    <property name="app.name" value="OnlinePayments"/>
+    <property name="WebApp.name" value="OPTWeb"/>
+    <property name="Util.name" value="OPTUtil"/>
+    <property name="App.dir" value="."/>
+    <property name="WebApp.dir" value="${App.dir}/OPTWeb"/>
+    <property name="Util.dir" value="${App.dir}/OPTUtil"/>
+    <property name="WebApp.src.dir" value="${WebApp.dir}/src"/>
+    <property name="WebApp.build.dir" value="${WebApp.dir}/build"/>
+    <property name="Util.src.dir" value="${Util.dir}/src"/>
+    <property name="Util.build.dir" value="${Util.dir}/build"/>
+    <property name="JBoss.home" value="C:/Program Files/jboss-eap-6.3"/>
+
+    <target name="CleanAll" description="Cleaning All the files">
+        <delete file="${App.dir}/${app.name}.ear"/>
+        <delete file="${App.dir}/${WebApp.name}.war"/>
+        <delete file="${App.dir}/${Util.name}.war"/>
+		<delete dir="${Util.build.dir}"/>
+		<delete dir="${WebApp.build.dir}"/>
+		<mkdir dir="${Util.build.dir}"/>
+		<mkdir dir="${WebApp.build.dir}"/>
+    </target>
+
+    <path id="Util.compile.classpath">
+        <fileset dir="${Util.dir}/lib">
+            <include name="log4j-1.2.15.jar"/>
+            <include name="activation.jar"/>
+            <include name="JavaMail.jar"/>
+            <include name="poi.jar"/>
+            <include name="commons-io-1.3.2.jar"/>
+        </fileset>
+    </path>
+
+    <target name="CompileUtil" description="Compile Util source ">
+        <javac srcdir="${Util.src.dir}" destdir="${Util.build.dir}" includeantruntime="false">
+            <classpath refid="Util.compile.classpath"/>
+        </javac>
+    </target>
+
+    <target name="GenerateUtilJar" depends="CompileUtil" description="Generate JAR file for Util">
+        <jar destfile="${App.dir}/${Util.name}.jar">
+            <fileset dir="${Util.build.dir}">
+            </fileset>
+        </jar>
+    </target>
+
+    <path id="WebApp.compile.classpath">
+        <fileset dir="${WebApp.dir}/web/WEB-INF/lib">
+            <include name="commons-beanutils-1.8.0.jar"/>
+            <include name="commons-collections-3.2.1"/>
+            <include name="commons-digester-2.1.jar"/>
+            <include name="commons-fileupload-1.2.1.jar"/>
+            <include name="commons-io-1.3.2.jar"/>
+            <include name="commons-lang-2.5.jar"/>
+            <include name="commons-lang3-3.1.jar"/>
+            <include name="commons-logging-1.1.1.jar"/>
+            <include name="dynamicreports-adhoc-3.1.3.jar"/>
+            <include name="dynamicreports-core-3.1.3.jar"/>
+            <include name="dynamicreports-googlecharts-3.1.3.jar"/>
+            <include name="freemarker-2.3.16.jar"/>
+            <include name="itext-2.1.7.js2.jar"/>
+            <include name="jasperreports-5.0.4.jar"/>
+            <include name="javassist-3.14.0-GA.jar"/>
+            <include name="log4j-1.2.15.jar"/>
+            <include name="ognl-3.0.4.jar"/>
+            <include name="poi.jar"/>
+            <include name="poi-ooxml-3.7.jar"/>
+            <include name="servlet-api-2.5.jar"/>
+            <include name="struts2-core-2.3.15.jar"/>
+            <include name="xwork-core-2.3.15.jar"/>
+			<include name="quartz-2.1.5.jar"/>
+			<include name="jboss-client.jar"/>
+			<include name="jfreechart-1.0.19.jar"/>
+			<include name="jcommon-1.0.23.jar"/>
+        </fileset>
+        <fileset dir="${App.dir}">
+            <include name="${Util.name}.jar"/>
+        </fileset>
+    </path>
+
+    <target name="CompileWebApp" description="Compile WebApp source ">
+        <javac srcdir="${WebApp.src.dir}" destdir="${WebApp.build.dir}" includeantruntime="false">
+            <classpath refid="WebApp.compile.classpath"/>
+        </javac>
+        <copy file="${WebApp.dir}/web/WEB-INF/struts-default.xml" todir="${WebApp.dir}/build"/>
+        <copy file="${WebApp.dir}/web/WEB-INF/log4j.properties" todir="${WebApp.dir}/build"/>
+    </target>
+
+    <target name="GenerateOPTWebAppWar" depends="CompileWebApp" description="Generate WAR file for Web Application">
+		 <copy file="${App.dir}/${Util.name}.jar" todir="${WebApp.dir}/web/WEB-INF/lib"/>
+        <war destfile="${App.dir}/${WebApp.name}.war" webxml="${WebApp.dir}/web/WEB-INF/web.xml">
+            <fileset dir="${WebApp.dir}/web">
+                <include name="jsp/**"/>
+                <include name="styles/**"/>
+                <include name="js/**"/>
+                <include name="images/**"/>
+                <include name="WEB-INF/**"/>
+                <exclude name="WEB-INF/struts-default.xml"/>
+            </fileset>
+            <classes dir="${WebApp.dir}/build">
+                <include name="*/**"/>
+            </classes>
+        </war>
+		<delete file="${WebApp.dir}/web/WEB-INF/lib/${Util.name}.jar"/>
+    </target>
+
+    <target name="OPT" depends="CleanAll, GenerateUtilJar, GenerateOPTWebAppWar">
+        <copy file="${App.dir}/${WebApp.name}.war" todir="${JBoss.home}/standalone/deployments"/>
+    </target>
+</project>
+

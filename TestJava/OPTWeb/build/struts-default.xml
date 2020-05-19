@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+    <constant name="struts.devMode" value="false"/>
+
+    <package name="default" extends="struts-default" namespace="/">
+
+        <global-results>
+            <result name="errHandler" type="chain">
+                <param name="actionName">errorProcessor</param>
+            </result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="errHandler"/>
+        </global-exception-mappings>
+
+        <action name="errorProcessor" class="com.opt.common.action.ErrorProcessor">
+            <result name="error">/jsp/common/errorpage.jsp</result>
+        </action>
+
+        <action name="OPT" class="com.opt.login.action.LoginAction" method="OPT">
+            <result name="SUCCESS">/jsp/application.jsp</result>
+        </action>
+
+        <action name="Login" class="com.opt.login.action.LoginAction" method="loadLogin">
+            <result name="SUCCESS">/jsp/login/login.jsp</result>
+        </action>
+
+        <action name="validateLogin" class="com.opt.login.action.LoginAction" method="validateLogin">
+            <result name="validateLoginFailure">jsp/login/login.jsp</result>
+            <result name="validateLoginSuccess">/jsp/home/intermediatehome.jsp</result>
+            <result type="chain" name="changePassword">changePassword</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+        </action>
+
+        <action name="homePage" class="com.opt.home.action.HomeAction" method="homePage">
+            <result name="SUCCESS">/jsp/home/home.jsp</result>
+            <result name="PrioritizeTickets">/jsp/home/prioritizetickets.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="changePassword" class="com.opt.login.action.LoginAction" method="changePassword">
+            <result name="SUCCESS">jsp/login/changepassword.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="saveChangePassword" class="com.opt.login.action.LoginAction" method="saveChangePassword">
+            <result type="chain" name="SUCCESS">changePassword</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadCreateTask" class="com.opt.tickets.action.TicketsAction" method="loadCreateTask">
+            <result name="SUCCESS">jsp/tickets/createtask.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadCreateBug" class="com.opt.tickets.action.TicketsAction" method="loadCreateBug">
+            <result name="SUCCESS">jsp/tickets/createbug.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="saveTask" class="com.opt.tickets.action.TicketsAction" method="saveTask">
+            <result type="chain" name="SUCCESS">loadCreateTask</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="saveBug" class="com.opt.tickets.action.TicketsAction" method="saveBug">
+            <result type="chain" name="SUCCESS">loadCreateBug</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadUpdateTask" class="com.opt.tickets.action.TicketsAction" method="loadUpdateTask">
+            <result name="SUCCESS">jsp/tickets/updatetask.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="updateTask" class="com.opt.tickets.action.TicketsAction" method="updateTask">
+            <result name="SUCCESS">jsp/tickets/updatetask.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadUpdateBug" class="com.opt.tickets.action.TicketsAction" method="loadUpdateBug">
+            <result name="SUCCESS">jsp/tickets/updatebug.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="updateBug" class="com.opt.tickets.action.TicketsAction" method="updateBug">
+            <result name="SUCCESS">jsp/tickets/updatebug.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="deleteTicket" class="com.opt.tickets.action.TicketsAction" method="deleteTicket">
+            <result type="chain" name="homePage">homePage</result>
+            <result type="chain" name="loadModifyCurrentTickets">loadModifyCurrentTickets</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="ReAssignTicketDummy" class="com.opt.tickets.action.TicketsAction" method="reAssignTicketDummy">
+            <result name="SUCCESS">jsp/tickets/reassignticketdummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadReAssignTicket" class="com.opt.tickets.action.TicketsAction" method="loadReAssignTicket">
+            <result name="SUCCESS">jsp/tickets/reassignticket.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="reAssignTicket" class="com.opt.tickets.action.TicketsAction" method="reAssignTicket">
+            <result type="chain" name="SUCCESS">loadReAssignTicket</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="startProgressTicket" class="com.opt.tickets.action.TicketsAction" method="startProgressTicket">
+            <result type="chain" name="SUCCESS">homePage</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="StopProgressTicketDummy" class="com.opt.tickets.action.TicketsAction"
+                method="stopProgressTicketDummy">
+            <result name="SUCCESS">jsp/tickets/addcommentsforstopdummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadStopProgressTicket" class="com.opt.tickets.action.TicketsAction"
+                method="loadStopProgressTicket">
+            <result name="SUCCESS">jsp/tickets/addcommentsforstopprogress.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="stopProgressTicket" class="com.opt.tickets.action.TicketsAction" method="stopProgressTicket">
+            <result type="chain" name="SUCCESS">loadStopProgressTicket</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadCloseTask" class="com.opt.tickets.action.TicketsAction" method="loadCloseTask">
+            <result name="SUCCESS">jsp/tickets/closetask.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="closeTask" class="com.opt.tickets.action.TicketsAction" method="closeTask">
+            <result name="SUCCESS">jsp/tickets/closetask.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadCloseBug" class="com.opt.tickets.action.TicketsAction" method="loadCloseBug">
+            <result name="SUCCESS">jsp/tickets/closebug.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="closeBug" class="com.opt.tickets.action.TicketsAction" method="closeBug">
+            <result name="SUCCESS">jsp/tickets/closebug.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadTicketDetails" class="com.opt.tickets.action.TicketsAction" method="loadTicketDetails">
+            <result name="SUCCESS">jsp/tickets/ticketdetailsdummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="viewTicketDetails" class="com.opt.tickets.action.TicketsAction" method="viewTicketDetails">
+            <result name="SUCCESS">jsp/tickets/ticketdetails.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="TicketList" class="com.opt.reports.action.ReportsAction"
+                method="TicketList">
+            <result name="SUCCESS">jsp/reports/ticketlist.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadAddUser" class="com.opt.maintenance.action.MaintenanceAction" method="loadAddUser">
+            <result name="SUCCESS">jsp/maintenance/addUser.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="addUser" class="com.opt.maintenance.action.MaintenanceAction" method="addUser">
+            <result type="chain" name="SUCCESS">loadAddUser</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="SessionExpire" class="com.opt.common.action.SessionExpire" method="expireSession">
+            <result name="SUCCESS">jsp/common/sessionexpired.jsp</result>
+        </action>
+
+        <action name="InvalidAccess" class="com.opt.common.action.SessionExpire" method="invalidAccess">
+            <result name="SUCCESS">jsp/common/invalidaccess.jsp</result>
+        </action>
+
+        <action name="closedTicketList" class="com.opt.reports.action.ReportsAction" method="closedTicketList">
+            <result name="SUCCESS">jsp/reports/closedticketlist.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="SLAMissedTickets" class="com.opt.reports.action.ReportsAction" method="SLAMissedTickets">
+            <result name="SUCCESS">jsp/reports/slamissedtickets.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadSLAMissedTicketDetails" class="com.opt.reports.action.ReportsAction"
+                method="loadSLAMissedTicketDetails">
+            <result name="SUCCESS">jsp/reports/SLAMissedticketdetailsdummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="viewSLAMissedTicketDetails" class="com.opt.reports.action.ReportsAction"
+                method="viewSLAMissedTicketDetails">
+            <result name="SUCCESS">jsp/tickets/ticketdetails.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadLeavePlans" class="com.opt.calendar.action.CalendarAction" method="loadLeavePlans">
+            <result name="SUCCESS">jsp/calendar/updateLeavePlans.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="saveLeavePlans" class="com.opt.calendar.action.CalendarAction" method="saveLeavePlans">
+            <result type="chain" name="SUCCESS">loadLeavePlans</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadHolidayCalendar" class="com.opt.calendar.action.CalendarAction" method="loadHolidayCalendar">
+            <result name="SUCCESS">jsp/calendar/holidaycalendar.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="saveHolidayCalendar" class="com.opt.calendar.action.CalendarAction" method="saveHolidayCalendar">
+            <result type="chain" name="SUCCESS">loadHolidayCalendar</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="ListOfHolidays" class="com.opt.reports.action.ReportsAction" method="ListOfHolidays">
+            <result name="SUCCESS">jsp/reports/listofholidays.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadModifyUser" class="com.opt.maintenance.action.MaintenanceAction" method="loadModifyUser">
+            <result name="SUCCESS">jsp/maintenance/modifyUser.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="modifyUser" class="com.opt.maintenance.action.MaintenanceAction" method="modifyUser">
+            <result type="chain" name="SUCCESS">loadModifyUser</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="ResourceAllocation" class="com.opt.reports.action.ReportsAction" method="ResourceAllocation">
+            <result name="SUCCESS">jsp/reports/resourceallocation.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="viewLeavePlans" class="com.opt.reports.action.ReportsAction" method="viewLeavePlans">
+            <result name="SUCCESS">jsp/reports/viewLeavePlans.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadModifyCurrentTickets" class="com.opt.tickets.action.TicketsAction"
+                method="loadModifyCurrentTickets">
+            <result name="SUCCESS">jsp/tickets/modifycurrenttickets.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadSLAReports" class="com.opt.reports.action.SLAReportsAction" method="loadSLAReports">
+            <result name="SUCCESS">jsp/reports/SLAReports.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadSLAReportsPDF" class="com.opt.reports.action.SLAReportsAction" method="loadSLAReportsPDF">
+            <result name="SUCCESS">jsp/reports/SLAPDFReportsDummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="GenerateSLAReportsPDF" class="com.opt.reports.action.SLAReportsAction"
+                method="GenerateSLAReportsPDF">
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadReopenTicket" class="com.opt.tickets.action.TicketsAction" method="loadReopenTicket">
+            <result name="SUCCESS">jsp/tickets/reopenticket.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="ReopenTicket" class="com.opt.tickets.action.TicketsAction" method="ReopenTicket">
+            <result type="chain" name="SUCCESS">loadReopenTicket</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadSLAMetrics" class="com.opt.reports.action.SLAReportsAction" method="loadSLAMetrics">
+            <result name="SUCCESS">jsp/reports/SLAMetrics.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadSLAMetricsPDF" class="com.opt.reports.action.SLAReportsAction" method="loadSLAMetricsPDF">
+            <result name="SUCCESS">jsp/reports/SLAPDFMetricsDummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="GenerateSLAMetricsPDF" class="com.opt.reports.action.SLAReportsAction"
+                method="GenerateSLAMetricsPDF">
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadClosedTicketDetails" class="com.opt.reports.action.ReportsAction"
+                method="loadClosedTicketDetails">
+            <result name="SUCCESS">jsp/reports/closedticketdetailsdummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="viewClosedTicketDetails" class="com.opt.reports.action.ReportsAction"
+                method="viewClosedTicketDetails">
+            <result name="SUCCESS">jsp/tickets/ticketdetails.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadAddCommentsDummy" class="com.opt.tickets.action.TicketsAction" method="loadAddCommentsDummy">
+            <result name="SUCCESS">jsp/tickets/addcommentsdummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadAddComments" class="com.opt.tickets.action.TicketsAction"
+                method="loadAddComments">
+            <result name="SUCCESS">jsp/tickets/addcomments.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="addComments" class="com.opt.tickets.action.TicketsAction" method="addComments">
+            <result type="chain" name="SUCCESS">loadAddComments</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadTicketStatus" class="com.opt.reports.action.ReportsAction"
+                method="loadTicketStatus">
+            <result name="SUCCESS">jsp/reports/ticketstatus.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="TicketStatus" class="com.opt.reports.action.ReportsAction"
+                method="TicketStatus">
+            <result type="chain" name="SUCCESS">loadTicketStatus</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadTeamContacts" class="com.opt.common.action.CommonAction"
+                method="loadTeamContacts">
+            <result name="SUCCESS">jsp/common/teamcontact.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadDomainContacts" class="com.opt.common.action.CommonAction"
+                method="loadDomainContacts">
+            <result name="SUCCESS">jsp/common/domaincontact.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="TicketCurrentStatus" class="com.opt.reports.action.ReportsAction"
+                method="TicketCurrentStatus">
+            <result name="SUCCESS">jsp/reports/ticketscurrentstatus.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadCreateInternalTask" class="com.opt.tickets.action.TicketsAction"
+                method="loadCreateInternalTask">
+            <result name="SUCCESS">jsp/tickets/createinternaltask.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="saveInternalTask" class="com.opt.tickets.action.TicketsAction" method="saveInternalTask">
+            <result type="chain" name="SUCCESS">loadCreateInternalTask</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="CurrentInternalTickets" class="com.opt.reports.action.ReportsAction"
+                method="CurrentInternalTickets">
+            <result name="SUCCESS">jsp/reports/currentinternaltickets.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="ClosedInternalTickets" class="com.opt.reports.action.ReportsAction"
+                method="ClosedInternalTickets">
+            <result name="SUCCESS">jsp/reports/closedinternaltickets.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadTicketCurrentStatusExcel" class="com.opt.reports.action.SLAReportsAction"
+                method="loadTicketCurrentStatusExcel">
+            <result name="SUCCESS">/jsp/reports/TicketsCurrentStatusExcelDummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="TicketCurrentStatusExcel" class="com.opt.reports.action.SLAReportsAction"
+                method="TicketCurrentStatusExcel">
+            <result name="SUCCESS">/jsp/reports/TicketsCurrentStatusExcel.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="DownloadExcel" class="com.opt.reports.action.SLAReportsAction" method="DownloadExcel">
+            <result name="SUCCESS">/jsp/reports/downloadexcel.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadSearchTicket" class="com.opt.common.action.CommonAction" method="loadSearchTicket">
+            <result name="SUCCESS">jsp/common/searchticketdetails.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadAddITCommentsDummy" class="com.opt.tickets.action.TicketsAction"
+                method="loadAddITCommentsDummy">
+            <result name="SUCCESS">jsp/tickets/addITcommentsdummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadAddITComments" class="com.opt.tickets.action.TicketsAction"
+                method="loadAddITComments">
+            <result name="SUCCESS">jsp/tickets/addITcomments.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="addITComments" class="com.opt.tickets.action.TicketsAction" method="addITComments">
+            <result type="chain" name="SUCCESS">loadAddITComments</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadCloseInternalTicketDummy" class="com.opt.tickets.action.TicketsAction"
+                method="loadCloseInternalTicketDummy">
+            <result name="SUCCESS">jsp/tickets/closeinternalticketdummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadCloseInternalTicket" class="com.opt.tickets.action.TicketsAction"
+                method="loadCloseInternalTicket">
+            <result name="SUCCESS">jsp/tickets/closeinternalticket.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="closeInternalTicket" class="com.opt.tickets.action.TicketsAction" method="closeInternalTicket">
+            <result type="chain" name="SUCCESS">loadCloseInternalTicket</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadInternalTicketDetailsDummy" class="com.opt.reports.action.ReportsAction"
+                method="loadInternalTicketDetailsDummy">
+            <result name="SUCCESS">jsp/reports/internalticketdetailsdummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadInternalTicketDetails" class="com.opt.reports.action.ReportsAction"
+                method="loadInternalTicketDetails">
+            <result name="SUCCESS">jsp/reports/internalticketdetails.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadAccessRights" class="com.opt.maintenance.action.MaintenanceAction" method="loadAccessRights">
+            <result name="SUCCESS">jsp/maintenance/accessRights.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="saveAccessRights" class="com.opt.maintenance.action.MaintenanceAction" method="saveAccessRights">
+            <result type="chain" name="SUCCESS">loadAccessRights</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadCreateRQABug" class="com.opt.tickets.action.RQATicketsAction" method="loadCreateRQABug">
+            <result name="SUCCESS">jsp/rqatickets/createrqabug.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="saveRQABug" class="com.opt.tickets.action.RQATicketsAction" method="saveRQABug">
+            <result type="chain" name="SUCCESS">loadCreateRQABug</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadRQATicketDetails" class="com.opt.tickets.action.RQATicketsAction"
+                method="loadRQATicketDetails">
+            <result name="SUCCESS">jsp/rqatickets/rqaticketdetailsdummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="viewRQATicketDetails" class="com.opt.tickets.action.RQATicketsAction"
+                method="viewRQATicketDetails">
+            <result name="SUCCESS">jsp/rqatickets/rqaticketdetails.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadRQAUpdateBug" class="com.opt.tickets.action.RQATicketsAction" method="loadRQAUpdateBug">
+            <result name="SUCCESS">jsp/rqatickets/updaterqabug.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="updateRQABug" class="com.opt.tickets.action.RQATicketsAction" method="updateRQABug">
+            <result type="chain" name="SUCCESS">loadRQAUpdateBug</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadAddRQACommentsDummy" class="com.opt.tickets.action.RQATicketsAction"
+                method="loadAddRQACommentsDummy">
+            <result name="SUCCESS">jsp/rqatickets/addrqacommentsdummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadAddRQAComments" class="com.opt.tickets.action.RQATicketsAction"
+                method="loadAddRQAComments">
+            <result name="SUCCESS">jsp/rqatickets/addrqacomments.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="addRQAComments" class="com.opt.tickets.action.RQATicketsAction" method="addRQAComments">
+            <result type="chain" name="SUCCESS">loadAddRQAComments</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="ReAssignRQATicketDummy" class="com.opt.tickets.action.RQATicketsAction"
+                method="ReAssignRQATicketDummy">
+            <result name="SUCCESS">jsp/rqatickets/reassignrqaticketdummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadReAssignRQATicket" class="com.opt.tickets.action.RQATicketsAction"
+                method="loadReAssignRQATicket">
+            <result name="SUCCESS">jsp/rqatickets/reassignrqaticket.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="reAssignRQATicket" class="com.opt.tickets.action.RQATicketsAction" method="reAssignRQATicket">
+            <result type="chain" name="SUCCESS">loadReAssignRQATicket</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadCloseRQABug" class="com.opt.tickets.action.RQATicketsAction" method="loadCloseRQABug">
+            <result name="SUCCESS">jsp/rqatickets/closerqabug.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="closeRQABug" class="com.opt.tickets.action.RQATicketsAction" method="closeRQABug">
+            <result type="chain" name="SUCCESS">loadCloseRQABug</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadModifyRQATickets" class="com.opt.tickets.action.RQATicketsAction"
+                method="loadModifyRQATickets">
+            <result name="SUCCESS">jsp/rqatickets/modifyrqatickets.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="deleteRQATicket" class="com.opt.tickets.action.RQATicketsAction" method="deleteRQATicket">
+            <result type="chain" name="homePage">homePage</result>
+            <result type="chain" name="loadModifyRQATickets">loadModifyRQATickets</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadReopenRQATicket" class="com.opt.tickets.action.RQATicketsAction" method="loadReopenRQATicket">
+            <result name="SUCCESS">jsp/rqatickets/reopenrqaticket.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="ReopenRQATicket" class="com.opt.tickets.action.RQATicketsAction" method="ReopenRQATicket">
+            <result type="chain" name="SUCCESS">loadReopenRQATicket</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadRQACurrentStatus" class="com.opt.reports.action.RQAReportsAction"
+                method="loadRQACurrentStatus">
+            <result name="SUCCESS">jsp/rqareports/rqacurrentstatus.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadRQADailyReport" class="com.opt.reports.action.RQAReportsAction"
+                method="loadRQADailyReport">
+            <result name="SUCCESS">jsp/rqareports/rqadailyreport.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadRQASettings" class="com.opt.maintenance.action.MaintenanceAction" method="loadRQASettings">
+            <result name="SUCCESS">jsp/maintenance/modifyrqasettings.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="updateRQASettings" class="com.opt.maintenance.action.MaintenanceAction"
+                method="updateRQASettings">
+            <result type="chain" name="SUCCESS">loadRQASettings</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadRQAMetrics" class="com.opt.reports.action.RQAReportsAction" method="loadRQAMetrics">
+            <result name="SUCCESS">jsp/rqareports/rqametrics.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadOOSLAReasonsDummy" class="com.opt.reports.action.SLAReportsAction"
+                method="loadOOSLAReasonsDummy">
+            <result name="SUCCESS">jsp/reports/OOSLAReasonsdummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadOOSLAReasons" class="com.opt.reports.action.SLAReportsAction" method="loadOOSLAReasons">
+            <result name="SUCCESS">jsp/reports/OOSLAReasons.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadResourceMatrix" class="com.opt.maintenance.action.MaintenanceAction"
+                method="loadResourceMatrix">
+            <result name="SUCCESS">jsp/maintenance/resourceMatrix.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="saveResourceMatrix" class="com.opt.maintenance.action.MaintenanceAction"
+                method="saveResourceMatrix">
+            <result type="chain" name="SUCCESS">loadResourceMatrix</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadITAdminChanges" class="com.opt.tickets.action.TicketsAction" method="loadITAdminChanges">
+            <result name="SUCCESS">jsp/tickets/modifyinternaltickets.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadUpdateIT" class="com.opt.tickets.action.TicketsAction" method="loadUpdateIT">
+            <result name="SUCCESS">jsp/tickets/updateinternalticket.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="UpdateIT" class="com.opt.tickets.action.TicketsAction" method="UpdateIT">
+            <result type="chain" name="SUCCESS">loadUpdateIT</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadDeleteIT" class="com.opt.tickets.action.TicketsAction" method="loadDeleteIT">
+            <result type="chain" name="homePage">homePage</result>
+            <result type="chain" name="ITAdminChanges">loadITAdminChanges</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="ClosureTrendDummy" class="com.opt.common.action.CommonAction" method="ClosureTrendDummy">
+            <result name="SUCCESS">jsp/common/charts/closuretrenddummy.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="ClosureTrend" class="com.opt.common.action.CommonAction" method="ClosureTrend">
+            <result name="SUCCESS">jsp/common/charts/closuretrend.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadCommonSettings" class="com.opt.maintenance.action.MaintenanceAction"
+                method="loadCommonSettings">
+            <result name="SUCCESS">jsp/maintenance/commonsettings.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="saveCommonSettings" class="com.opt.maintenance.action.MaintenanceAction"
+                method="saveCommonSettings">
+            <result type="chain" name="SUCCESS">loadCommonSettings</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadSearchCriteria" class="com.opt.common.action.CommonAction"
+                method="loadSearchCriteria">
+            <result name="SUCCESS">jsp/common/tickets/searchcriteria.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="searchLiveTickets" class="com.opt.common.action.CommonAction"
+                method="searchLiveTickets">
+            <result type="chain" name="SUCCESS">loadSearchCriteria</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadUpdateClosedTicket" class="com.opt.tickets.action.TicketsAction" method="loadUpdateClosedTicket">
+            <result name="SUCCESS">jsp/tickets/updateclosedticket.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="UpdateClosedTicket" class="com.opt.tickets.action.TicketsAction" method="UpdateClosedTicket">
+            <result type="chain" name="SUCCESS">loadUpdateClosedTicket</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadTeamFeedback" class="com.opt.common.action.CommonAction" method="loadTeamFeedback">
+            <result name="SUCCESS">jsp/common/teamfeedback.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="UpdateTeamFeedback" class="com.opt.common.action.CommonAction" method="UpdateTeamFeedback">
+            <result type="chain" name="SUCCESS">loadTeamFeedback</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="getTeamFeedbackDetails" class="com.opt.common.action.CommonAction" method="getTeamFeedbackDetails">
+            <result type="chain" name="SUCCESS">loadTeamFeedback</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadReopenedTickets" class="com.opt.reports.action.ReportsAction" method="loadReopenedTickets">
+            <result name="SUCCESS">jsp/reports/reopenedtickets.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+
+        <action name="loadCodeFixReleases" class="com.opt.reports.action.ReportsAction" method="loadCodeFixReleases">
+            <result name="SUCCESS">jsp/reports/codefixreleases.jsp</result>
+            <result type="chain" name="SessionExpire">SessionExpire</result>
+            <result type="chain" name="InvalidAccess">InvalidAccess</result>
+        </action>
+    </package>
+
+</struts>

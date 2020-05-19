@@ -1,0 +1,345 @@
+body {
+    font-family: Arial;
+    font-size: 11px;
+}
+
+a:link {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #000000;
+    WHITE-SPACE: nowrap;
+    TEXT-DECORATION: none
+}
+
+a:hover {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #000000;
+    WHITE-SPACE: nowrap;
+    TEXT-DECORATION: none
+}
+
+a:visited {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #000000;
+    WHITE-SPACE: nowrap;
+    TEXT-DECORATION: none
+}
+
+.alert {
+    font-family: Arial;
+    font-size: 10px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.alertHeading {
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #000000;
+}
+
+.HeadingErr {
+    color: #FF0000;
+    font-weight: bold;
+}
+
+.Header {
+    background-color: #e7eff9;
+}
+
+.SubHeader {
+    color: #3366CC;
+}
+
+.ErrorDisplay {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FF0000;
+    font-size: 13px;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.ContentMargin {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.Copy_Right {
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    font-weight: normal;
+    font-size: 11px;
+}
+
+TextBox, .inputfnt {
+    FONT-SIZE: 11px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+
+}
+
+TEXTAREA, .bginput {
+    FONT-SIZE: 12px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    COLOR: #FFFFFF;
+    border-width: thin;
+    border-style: groove;
+    color: #000000;
+
+}
+
+TEXTAREA, .bginput1 {
+    FONT-SIZE: 12px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    COLOR: #F0F0F0;
+    border-width: thin;
+    border-style: groove;
+    color: #000000;
+}
+
+.Headings {
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+.top_heading {
+    font-size: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.login_top_heading {
+    font-size: 14pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+
+}
+
+.cols {
+    font-size: 9pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+
+}
+
+.menu {
+    font-size: 8pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+
+}
+
+.tr_background {
+    background-color: #F0F0F0;
+}
+
+.tr_background_one {
+    background-color: #F8F8F8;
+}
+
+.OutlineTableBorder {
+    border-collapse: collapse;
+    border-color: whitesmoke;
+    border-width: thin;
+    border-style: solid;
+    padding-top: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+}
+
+.LoginOutlineTableBorder {
+    border-collapse: collapse;
+    border-color: #F0F0F0;
+    border-width: thin;
+    border-style: solid;
+    padding-top: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+}
+
+.OutlineinnerTableBorder {
+    border-collapse: collapse;
+    border-color: Grey;
+    border-width: thin;
+    border-style: solid;
+    padding-top: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+}
+
+.MandatoryText {
+    font-family: Arial;
+    font-size: 10px;
+    color: #FF0000;
+    text-align: right;
+}
+
+h2 {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-align: left;
+    color: #3366CC;
+}
+
+.HeaderRow {
+    background-color: #EBF4FA;
+    color: #555555;
+    font: 10px Arial, helvetica, sans-serif;
+    padding: 2px 4px 2px 6px;
+}
+
+.LoggedName {
+    padding-left: 5px;
+    color: #333366;
+    font-family: Arial, helvetica, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.tborder {
+    background-color: #cccccc;
+    color: #000000;
+    border: 1px solid #999999;
+}
+
+.tcat {
+    background-color: #e7eff9;
+    color: #555555;
+    font: bold 14px arial, helvetica, sans-serif;
+    padding: 6px 6px 6px 8px;
+}
+
+.searchcaption {
+    color: #3366CC;
+}
+
+INPUT {
+    BORDER-RIGHT: 1px solid;
+    BORDER-TOP: 1px solid;
+    FONT-SIZE: 12px;
+    BACKGROUND: #ffffff;
+    BORDER-LEFT: 1px solid;
+    COLOR: #666666;
+    BORDER-BOTTOM: 1px solid;
+    FONT-FAMILY: Arial;
+    border-color: #999999
+}
+
+SELECT {
+    BORDER-RIGHT: 1px solid;
+    BORDER-TOP: 1px solid;
+    FONT-SIZE: 12px;
+    BACKGROUND: #ffffff;
+    BORDER-LEFT: 1px solid;
+    COLOR: #666666;
+    BORDER-BOTTOM: 1px solid;
+    FONT-FAMILY: Arial;
+    border-color: #999999
+}
+
+TEXTAREA {
+    BORDER-RIGHT: 1px solid;
+    BORDER-TOP: 1px solid;
+    FONT-SIZE: 12px;
+    BACKGROUND: #ffffff;
+    BORDER-LEFT: 1px solid;
+    COLOR: #666666;
+    BORDER-BOTTOM: 1px solid;
+    FONT-FAMILY: Arial;
+    border-color: #999999;
+}
+
+.button {
+    BORDER-RIGHT: #666666 1px solid;
+    BACKGROUND-POSITION: center 50%;
+    BORDER-TOP: #aaaaaa 1px solid;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 12px;
+    BACKGROUND: #3366CC;
+    BORDER-LEFT: #aaaaaa 1px solid;
+    CURSOR: pointer;
+    COLOR: #000000;
+    BORDER-BOTTOM: #666666 1px solid;
+    BACKGROUND-REPEAT: repeat-x;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #cadfef
+}
+
+.searchbutton {
+    BORDER-RIGHT: #8a9bcf 1px solid;
+    BACKGROUND-POSITION: 50% bottom;
+    BORDER-TOP: #8a9bcf 1px solid;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10px;
+    BACKGROUND: #3366CC;
+    BORDER-LEFT: #8a9bcf 1px solid;
+    COLOR: #000000;
+    BORDER-BOTTOM: #8a9bcf 1px solid;
+    BACKGROUND-REPEAT: repeat-x;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #d4e1ee
+}
+
+.search_inputbox {
+    BORDER-RIGHT: #8a9bcf 1px solid;
+    BORDER-TOP: #8a9bcf 1px solid;
+    PADDING-LEFT: 2px;
+    FONT-SIZE: 10px;
+    BACKGROUND: #fafafa;
+    BORDER-LEFT: #8a9bcf 1px solid;
+    COLOR: #333333;
+    BORDER-BOTTOM: #8a9bcf 1px solid;
+    FONT-FAMILY: Arial
+}
+
+.inputbox {
+    BORDER-RIGHT: 1px solid;
+    BORDER-TOP: 1px solid;
+    FONT-SIZE: 9px;
+    BACKGROUND: #ffffff;
+    BORDER-LEFT: 1px solid;
+    COLOR: #666666;
+    BORDER-BOTTOM: 1px solid;
+    FONT-FAMILY: Arial
+}
+
+.TDColumn {
+    FONT-SIZE: 10px;
+    COLOR: #333333;
+    font-weight: bold;
+    FONT-FAMILY: Arial, Verdana, Helvetica, sans-serif
+}
+
+TD {
+    FONT-SIZE: 10px;
+    COLOR: #333333;
+    FONT-FAMILY: Arial, Verdana, Helvetica, sans-serif
+}
+
+TH {
+    FONT-SIZE: 10px;
+    COLOR: #333333;
+    FONT-FAMILY: Arial, Verdana, Helvetica, sans-serif
+}

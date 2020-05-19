@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         id="WebApp_ID" version="2.5">
+
+    <display-name>OPT</display-name>
+
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>log4j-init</servlet-name>
+        <servlet-class>com.opt.servlets.Log4jInit</servlet-class>
+        <init-param>
+            <param-name>log4j-init-file</param-name>
+            <param-value>WEB-INF\classes\log4j.properties</param-value>
+        </init-param>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>log4j-init</servlet-name>
+        <url-pattern>/init</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EmailQListener</servlet-name>
+        <servlet-class>com.opt.jms.listener.EmailQListener</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EmailQListener</servlet-name>
+        <url-pattern>/EmailQListener</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoadStartupValues</servlet-name>
+        <servlet-class>com.opt.common.startup.LoadStartupValues</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoadStartupValues</servlet-name>
+        <url-pattern>/LoadStartupValues</url-pattern>
+    </servlet-mapping>
+
+	<!--
+	<listener>
+		<listener-class>com.opt.scheduler.listener.OPTListener</listener-class>
+	</listener>
+	-->
+
+</web-app>

@@ -1,0 +1,544 @@
+.header {
+    font-family: verdana, arial, helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    color: red;
+}
+
+.headerblue {
+    font-family: verdana, arial, helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    color: blue;
+}
+
+.headerblue1 {
+    font-family: verdana, arial, helvetica;
+    font-size: 15px;
+    font-weight: bold;
+    color: blue;
+}
+
+.headerblue2 {
+    font-family: verdana, arial, helvetica;
+    font-size: 14px;
+    font-weight: bold;
+    color: blue;
+}
+
+.headerpurple {
+    font-family: verdana, arial, helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    color: purple;
+}
+
+.headergreen {
+    font-family: verdana, arial, helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    color: green;
+}
+
+.alertred {
+    font-family: verdana, arial, helvetica;
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}
+
+.headergreen18 {
+    font-family: verdana, arial, helvetica;
+    font-size: 18px;
+    font-weight: bold;
+    color: #3CB371;
+}
+
+.subheader {
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    font-weight: bold;
+    color: red;
+}
+
+.txtblue {
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    color: #003399;
+}
+
+.txtbluebold {
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    font-weight: bold;
+    color: #003399;
+}
+
+.txtredbold {
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    font-weight: bold;
+    color: red;
+}
+
+.txtred {
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    color: red;
+}
+
+.txtredbold15 {
+    font-family: verdana, arial, helvetica;
+    font-size: 15px;
+    font-weight: bold;
+    color: red;
+}
+
+.txtred15 {
+    font-family: verdana, arial, helvetica;
+    font-size: 15px;
+    color: red;
+}
+
+.txtred14 {
+    font-family: verdana, arial, helvetica;
+    font-size: 15px;
+    color: red;
+}
+
+.txtorangebold {
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFA500;
+}
+
+.txtredbold14 {
+    font-family: verdana, arial, helvetica;
+    font-size: 14px;
+    font-weight: bold;
+    color: red;
+}
+
+.txtredbold13 {
+    font-family: verdana, arial, helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    color: red;
+}
+
+.txtorangebold14 {
+    font-family: verdana, arial, helvetica;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFA500;
+}
+
+.txtorangebold13 {
+    font-family: verdana, arial, helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFA500;
+}
+
+.txtbluebold14 {
+    font-family: verdana, arial, helvetica;
+    font-size: 14px;
+    font-weight: bold;
+    color: #003399;
+}
+
+.txtbluebold13 {
+    font-family: verdana, arial, helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    color: #003399;
+}
+
+.txtgreenbold14 {
+    font-family: verdana, arial, helvetica;
+    font-size: 14px;
+    font-weight: bold;
+    color: #009900;
+}
+
+.txtgreenbold13 {
+    font-family: verdana, arial, helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    color: #009900;
+}
+
+.txtfirbrickbold13 {
+    font-family: verdana, arial, helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    color: #b22222;
+}
+
+.txtgreen {
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    color: #009900;
+}
+
+.txtgreenbold {
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    font-weight: bold;
+    color: #009900;
+}
+
+.txtgreen15 {
+    font-family: verdana, arial, helvetica;
+    font-size: 15px;
+    color: #009900;
+}
+
+.txtgreenbold15 {
+    font-family: verdana, arial, helvetica;
+    font-size: 15px;
+    font-weight: bold;
+    color: #009900;
+}
+
+.txtgreenbold11 {
+    font-family: verdana, arial, helvetica;
+    font-size: 11px;
+    font-weight: bold;
+    color: #009900;
+}
+
+.txtblackbold {
+    font-family: verdana, arial, helvetica;
+    font-size: 11px;
+    font-weight: bold;
+    color: black;
+}
+
+.txtblackbold12 {
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+}
+
+.txtblackbold13 {
+    font-family: verdana, arial, helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+}
+
+.txtblackbold14 {
+    font-family: verdana, arial, helvetica;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+}
+
+.txtblackbold10 {
+    font-family: verdana, arial, helvetica;
+    font-size: 10px;
+    font-weight: bold;
+    color: black;
+}
+
+.txtblack10 {
+    font-family: verdana, arial, helvetica;
+    font-size: 10px;
+    font-weight: normal;
+    color: black;
+}
+
+.txtblackbold11 {
+    font-family: verdana, arial, helvetica;
+    font-size: 11px;
+    font-weight: bold;
+    color: black;
+}
+
+.txtblack11 {
+    font-family: verdana, arial, helvetica;
+    font-size: 11px;
+    font-weight: normal;
+    color: black;
+}
+
+.txtblack12 {
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    font-weight: normal;
+    color: black;
+}
+
+.txtblackbold9 {
+    font-family: verdana, arial, helvetica;
+    font-size: 9px;
+    font-weight: bold;
+    color: black;
+}
+
+.txtblack9 {
+    font-family: verdana, arial, helvetica;
+    font-size: 9px;
+    font-weight: normal;
+    color: black;
+}
+
+.txtblack {
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    color: black;
+}
+
+.txtgreybold {
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    font-weight: bold;
+    color: #666666;
+}
+
+.txtgrey {
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    color: #666666;
+}
+
+.txtgrey12 {
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    font-weight: bold;
+    color: #666666;
+}
+
+.txtwhitebold {
+    font-family: verdana, arial, helvetica;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.link {
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    text-decoration: underline;
+    color: #003399;
+}
+
+.divDate {
+    position: absolute;
+    visibility: hidden;
+    font-family: verdana, arial, helvetica;
+    font-size: 10px;
+}
+
+.LightBandStyle {
+    background-color: #f2f2f2;
+}
+
+.LightGreyBandStyle {
+    background-color: #f2f2f2;
+}
+
+.DarkGreyBandStyle {
+    background-color: #DCDCDC;
+}
+
+.LightBlueBandStyle {
+    background-color: #B0E0E6;
+}
+
+.BlackBandStyle13 {
+    background-color: #000000;
+    font-family: verdana, arial, helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.LightBlueBandStyleText {
+    background-color: #B0E0E6;
+    font-family: verdana, arial, helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.DarkBlueBandStyleText13 {
+    background-color: #0061a7;
+    font-family: verdana, arial, helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.SkyBlueBandStyleText14 {
+    background-color: #5F9EA0;
+    font-family: verdana, arial, helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.DarkBlueBandStyleText14 {
+    background-color: #0061a7;
+    font-family: verdana, arial, helvetica;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.DarkBlueBandStyle {
+    background-color: #0061a7;
+    font-family: verdana, arial, helvetica;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.CreamBandStyle {
+    background-color: #FFDAB9;
+    font-family: verdana, arial, helvetica;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.WhiteBandStyle12 {
+    background-color: #f2f2f2;
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    color: black;
+}
+
+.LightGreenBandStyle {
+    background-color: #90EE90;
+}
+
+.link {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: purple;
+    text-decoration: underline;
+}
+
+.accessAid {
+    display: block !important;
+    height: 1px !important;
+    left: -500em !important;
+    line-height: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    text-align: left !important;
+    text-indent: -9999em !important;
+    top: 0 !important;
+    width: 1px !important;
+}
+
+#fullPageMask {
+    left: 0;
+    top: 0;
+    z-index: 20002;
+}
+
+#fullPageMask .fullMask {
+    background-color: black;
+    background-image: radial-gradient(circle farthest-corner, #000000, #4a4a4a);
+    left: 0;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    z-index: 20001;
+}
+
+#fullPageMask .pgMaskContent {
+    box-sizing: border-box;
+    color: #fff;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    left: 50%;
+    margin-left: -165px;
+    margin-top: -80px;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    width: 550px;
+    z-index: 20003;
+}
+
+html {
+    overflow: -moz-scrollbars-vertical;
+}
+
+.myButton {
+    -moz-box-shadow: inset 0px 1px 0px 0px #54a3f7;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #54a3f7;
+    box-shadow: inset 0px 1px 0px 0px #54a3f7;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
+    background: -moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background: -webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background: -o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background: -ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background: linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7', GradientType=0);
+    background-color: #007dc1;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 3px solid #124d77;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: verdana, arial, helvetica;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 10px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #154682;
+}
+
+.myButton:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+    background: -moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background: -webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background: -o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background: -ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background: linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1', GradientType=0);
+    background-color: #0061a7;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
+
+.TableBorder2Pix {
+    border: 2px solid #666666
+}
+
+.TableBorder1Pix {
+    border: 1px solid #666666
+}
+
+pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+
+    -ms-word-break: break-all;
+    word-break: break-all;
+
+    /* Non standard for webkit */
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
