@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>CSC</title>
+    <script type="text/javascript" src="zebradialog/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="zebradialog/zebra_dialog.js"></script>
+    <link rel="stylesheet" href="zebradialog/zebra_dialog.css" type="text/css">
+    <link href="stylesheets/webstyles.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript">
+        hljs.initHighlightingOnLoad();
+    </script>
+    <script language="javascript" src="javascripts/common.js"></script>
+    <link rel="stylesheet" href="loginstyles/styles.css"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript">
+        function onLoadFun() {
+            document.WebForm.LoginID.focus();
+            var userCheck = "<%= ValidateUser %>";
+            if (userCheck == "InvalidUser") {
+                errorMessage("Incorrect UserId / Password", function (caption) {
+                    document.WebForm.LoginID.focus();
+                });
+            }
+        }
+
+        function enterKeyFunction() {
+            validateLogin();
+        }
+
+
+        function validateLogin() {
+            if (document.WebForm.formsubmit.value == "submitted") {
+                return;
+            }
+            else {
+                if (isEmpty(document.WebForm.LoginID.value)) {
+                    warningMessage("Enter User ID", function (caption) {
+                        document.WebForm.LoginID.focus();
+                    });
+                    return;
+                }
+                if (isEmpty(document.WebForm.Password.value)) {
+                    warningMessage("Enter Password", function (caption) {
+                        document.WebForm.Password.focus();
+                    });
+                    return;
+                }
+                document.WebForm.action = "validateLogin";
+                document.WebForm.submit();
+            }
+        }
+
+    </script>
+</head>
+<body onload="onLoadFun();">
+<div id="main">
+    <div class="logo">
+        <img alt="CSC Home Page" src="images/CSC-Logo.png">
+    </div>
+    <!--<h1>Sign up, it's FREE!</h1>-->
+    <h1><%= AppConstants.APPTITLE %></h1>
+
+    <form name="WebForm" method="post">
+        <input type="hidden" name="formsubmit">
+
+        <div class="row email">
+            <input type="text" id="email" name="LoginID" placeholder="User Id" onKeyPress="trackEnterKey(event)"/>
+        </div>
+
+        <div class="row pass">
+            <input type="password" id="password1" name="Password" placeholder="Password"
+                   onKeyPress="trackEnterKey(event)"/>
+        </div>
+
+
+        <input type="button" value="Login" class="myButton" id="loginButtonId" onclick="JavaScript:validateLogin()"/>
+
+    </form>
+</div>
+
+<footer>
+    <a class="al3xis">&#169; 2015 Computer Sciences Corporation (CSC). All rights reserved </a>
+</footer>
+
+</body>
+</html>
