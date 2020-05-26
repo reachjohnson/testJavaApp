@@ -1,0 +1,560 @@
+body {
+    font: 14px/1.3 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.35);
+    background-image: url(../images/overlay-pattern.png);
+}
+
+select, textarea, input[type=text] {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 4px;
+
+}
+
+.headerblue {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: blue;
+    padding: 5px;
+}
+
+.alertred {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    padding: 5px;
+}
+
+.txtblue {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #003399;
+    padding: 5px;
+}
+
+.txtbluebold {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #003399;
+    padding: 5px;
+}
+
+.txtred {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: red;
+    padding: 5px;
+}
+
+.txtredbold {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: red;
+    padding: 5px;
+}
+
+.txtorangebold {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFA500;
+}
+
+.txtgreen15 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #009900;
+    padding: 5px;
+}
+
+.txtgreenbold15 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #009900;
+    padding: 5px;
+}
+
+.txtblackbold13 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #000000;
+    padding: 5px;
+}
+
+.txtblack13 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    color: #000000;
+}
+.txtblack14 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #000000;
+}
+
+.txtblackbold12 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000;
+    padding: 5px;
+}
+
+.txtblack12 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #000000;
+}
+
+.txtblackbold14 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    padding: 5px;
+}
+
+.txtblackbold11 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    padding: 5px;
+}
+
+.txtblack11 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #000000;
+}
+
+.txtblackbold10 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #000000;
+    padding: 5px;
+}
+
+.txtblack10 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    color: #000000;
+}
+
+.txtblackbold9 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    color: #000000;
+    padding: 5px;
+}
+
+.txtblack9 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 9px;
+    font-weight: normal;
+    color: #000000;
+}
+
+.txtredbold14 {
+    font-family: verdana, arial, helvetica;
+    font-size: 14px;
+    font-weight: bold;
+    color: red;
+}
+
+.txtorangebold14 {
+    font-family: verdana, arial, helvetica;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFA500;
+}
+
+
+.link {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    text-decoration: underline;
+    color: #000000;
+}
+
+.link14 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    text-decoration: underline;
+    color: darkblue;
+}
+
+.LightGreyBandStyle {
+    background-color: #f2f2f2;
+}
+
+.DarkGreyBandStyle {
+    background-color: #DCDCDC;
+}
+
+.DarkGreyBandStyleHeading {
+    background-color: darkgrey;
+}
+
+.LightBlueBandStyle {
+    /*background-color: #B0E0E6;*/
+    /*background-color: #7fafb5; */
+    background: rgb(105, 155, 200);
+    background: -moz-radial-gradient(top left, ellipse cover, rgba(105, 155, 200, 1) 0%, rgba(181, 197, 216, 1) 55%);
+    background: -webkit-gradient(radial, top left, 0px, top left, 100%, color-stop(0%, rgba(105, 155, 200, 1)), color-stop(55%, rgba(181, 197, 216, 1)));
+    background: -webkit-radial-gradient(top left, ellipse cover, rgba(105, 155, 200, 1) 0%, rgba(181, 197, 216, 1) 55%);
+    background: -o-radial-gradient(top left, ellipse cover, rgba(105, 155, 200, 1) 0%, rgba(181, 197, 216, 1) 55%);
+    background: -ms-radial-gradient(top left, ellipse cover, rgba(105, 155, 200, 1) 0%, rgba(181, 197, 216, 1) 55%);
+    background: radial-gradient(ellipse at top left, rgba(105, 155, 200, 1) 0%, rgba(181, 197, 216, 1) 55%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#699bc8', endColorstr='#b5c5d8', GradientType=1);
+}
+
+.DarkBlueBandStyleText14 {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+100,7db9e8+100 */
+    background: #1e5799; /* Old browsers */
+    background: -moz-linear-gradient(top, #1e5799 100%, #7db9e8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, #1e5799), color-stop(100%, #7db9e8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #1e5799 100%, #7db9e8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #1e5799 100%, #7db9e8 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #1e5799 100%, #7db9e8 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #1e5799 100%, #7db9e8 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e5799', endColorstr='#7db9e8', GradientType=0); /* IE6-9 */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 5px;
+}
+
+.DarkBlueBandStyleText16 {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+100,7db9e8+100 */
+    background: #1e5799; /* Old browsers */
+    background: -moz-linear-gradient(top, #1e5799 100%, #7db9e8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, #1e5799), color-stop(100%, #7db9e8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #1e5799 100%, #7db9e8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #1e5799 100%, #7db9e8 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #1e5799 100%, #7db9e8 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #1e5799 100%, #7db9e8 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e5799', endColorstr='#7db9e8', GradientType=0); /* IE6-9 */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 5px;
+}
+
+.accessAid {
+    display: block !important;
+    height: 1px !important;
+    left: -500em !important;
+    line-height: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    text-align: left !important;
+    text-indent: -9999em !important;
+    top: 0 !important;
+    width: 1px !important;
+}
+
+#fullPageMask {
+    left: 0;
+    top: 0;
+    z-index: 20002;
+}
+
+#fullPageMask .fullMask {
+    background-color: black;
+    background-image: radial-gradient(circle farthest-corner, #000000, #4a4a4a);
+    left: 0;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    z-index: 20001;
+}
+
+#fullPageMask .pgMaskContent {
+    box-sizing: border-box;
+    color: #fff;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    left: 50%;
+    margin-left: -165px;
+    margin-top: -80px;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    width: 550px;
+    z-index: 20003;
+}
+
+html {
+    overflow: -moz-scrollbars-vertical;
+}
+
+.myButton {
+    background: #007dc1 linear-gradient(to bottom, #007dc1 5%, #0061a7 100%) repeat scroll 0 0;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #54a3f7 inset;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 10px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #154682;
+}
+
+.myButton:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+    background: -moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background: -webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background: -o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background: -ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background: linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1', GradientType=0);
+    background-color: #0061a7;
+    box-shadow: 0 0 15px #FE1A00;
+}
+
+.myButton:focus {
+    box-shadow: 0 0 15px #FE1A00;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+    box-shadow: 0 0 15px #FE1A00;
+}
+
+#buttonId100, #buttonId101 {
+    margin: 14px 25px 0 0;
+}
+
+#loginButtonId {
+    margin: 70px 0px 0 0;
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.TableBorder1Pix {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 3px;
+    box-shadow: 3px 3px 3px #000;
+    background-color: #333;
+}
+
+.TableBorder2Pix {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 3px;
+    box-shadow: 3px 3px 3px #000;
+    background-color: #FFFFFF;
+}
+
+pre {
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+
+    -ms-word-break: break-all;
+    word-break: break-all;
+
+    /* Non standard for webkit */
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+#mainTable tr:hover {
+    background-color: darkgrey;
+    border-collapse: collapse;
+    border-color: white;
+    border-style: solid;
+}
+
+#mainTable a:hover {
+    text-decoration: none;
+    font-size: 13px;
+    color: darkblue;
+}
+
+#mainTableToolTip tr:hover {
+    background-color: darkgrey;
+    border-collapse: collapse;
+    border-color: white;
+    border-style: solid;
+}
+
+#mainTableToolTip a:hover {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+#mainTable1 tr:hover {
+    background-color: darkgrey;
+    border-collapse: collapse;
+    border-color: white;
+    border-style: solid;
+}
+
+#mainTable1 a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: darkblue;
+}
+
+#mainTableToolTip1 tr:hover {
+    background-color: darkgrey;
+    border-collapse: collapse;
+    border-color: white;
+    border-style: solid;
+}
+
+#mainTableToolTip1 a:hover {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+
+
+
+input:focus {
+    background-color: #ffffcc;
+    border-width: 2px;
+    border-color: #000000;
+}
+
+select:focus {
+    background-color: #ffffcc;
+    border-width: 2px;
+    border-color: #000000;
+}
+
+textarea:focus {
+    background-color: #ffffcc;
+    border-width: 2px;
+    border-color: #000000;
+}
+
+input[type=checkbox].focus {
+    background: #ffffcc;
+    border-width: 2px;
+    border-color: #000000;
+}
+
+input[type="radio"]:focus {
+    background: #ffffcc;
+    border-width: 2px;
+    border-color: #000000;
+}
+
+.GreenBandStyleShadow {
+    background: -moz-linear-gradient(45deg, #E4FFD6 0%, #008080 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #E4FFD6), color-stop(100%, #008080)); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, #E4FFD6 0%, #008080 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, #E4FFD6 0%, #008080 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, #E4FFD6 0%, #008080 100%); /* ie10+ */
+    background: linear-gradient(45deg, #E4FFD6 0%, #008080 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008080', endColorstr='#E4FFD6', GradientType=1); /* ie6-9 */
+}
+.LightGreenBandStyle {
+    background-color: #eafaea;
+}
+
+input[type=checkbox].css-checkbox {
+    position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-checkboxlabel {
+    padding-left:23px;
+    height:23px;
+    display:inline-block;
+    line-height:23px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    vertical-align:middle;
+    cursor:pointer;
+
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-checkboxlabel {
+    background-position: 0 -23px;
+}
+input[type=checkbox].css-checkbox:focus + label.css-checkboxlabel {
+    border:1px solid #000;
+    margin:0;
+}
+label.css-checkboxlabel {
+    background-image:url(../images/csscheckbox.png);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input[type=radio].css-radiobutton {
+    position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+input[type=radio].css-radiobutton + label.css-radiolabel {
+    padding-left:23px;
+    height:22px;
+    display:inline-block;
+    line-height:22px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:22px;
+    vertical-align:middle;
+    cursor:pointer;
+
+}
+
+input[type=radio].css-radiobutton:checked + label.css-radiolabel {
+    background-position: 0 -22px;
+}
+input[type=radio].css-radiobutton:focus + label.css-radiolabel {
+    border:1px solid #000;
+    margin:0;
+}
+
+label.css-radiolabel {
+    background-image:url(../images/cssradiobutton.png);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
